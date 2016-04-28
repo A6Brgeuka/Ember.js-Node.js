@@ -1,0 +1,63 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+.page-header a h1 {
+  color: #555;
+}
+.navbar-default .navbar-nav > li > a.active,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555555;
+  background-color: #e7e7e7;
+}
+.empty-list .empty-message {
+  display: inline-block;
+  color: #555;
+  line-height: 100px;
+}
+.spinner {
+  background: url('/images/ajax-loader.gif') no-repeat;
+  height: 31px;
+  width: 31px;
+  margin: 0 auto;
+}
+
+.title {
+
+}
+
+.button-action {
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.custom-notify {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 10px;
+  right: 0;
+  left: 0;
+}
+/* message box */
+.custom-notify .callout {
+  position: relative;
+  overflow: hidden;
+}
+/* classes applied for animating in/out */
+.custom-notify .ember-notify-show {}
+.custom-notify .ember-notify-hide {}
+.custom-notify .ember-notify-hide {}
+
+textarea#body {
+  max-width: 361px;
+}
+
+.sorting-button {
+  margin-left: 10px;
+}
+
+.search-panel {
+  width: 375px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}

@@ -1,0 +1,14 @@
+{{#modal-dialog close="close"
+targetAttachment="center"
+translucentOverlay=true}}
+    <h2>Are you sure you want to delete this product?</h2>
+    <hr>
+    <div class="navbar-right" style="margin-right: 40px">
+        <button class="btn btn-primary delete-confirm" type="button" {{action "deleteProduct"}}>
+            Ok
+        </button>
+        <button class="btn btn-primary delete-cancel" type="button" {{action "close"}}>
+            Cancel
+        </button>
+    </div>
+{{/modal-dialog}}

@@ -1,0 +1,42 @@
+{{#modal-dialog close="close"
+                targetAttachment="center"
+                translucentOverlay=true}}
+    <h2>Create/update product</h2>
+    <hr>
+    <form {{action "send" on="submit"}} name="form" autocomplete="off">
+        <div class="form-group">
+            <label for="title">Title:</label>
+          {{input value=model.title type="text"
+                  class="form-control" name="title" id="title"
+                  placeholder="Title" required="true" }}
+        </div>
+        <div class="form-group">
+            <label for="body">Description:</label>
+          {{textarea value=model.description class="form-control"
+                     name="body" id="body" rows="8" cols="40"
+                     required="true"}}
+        </div>
+
+        {{#if isNew}}
+            <label class="control-label">Select File</label>
+          <input type="file" id="file" required="true" class="file" />
+        {{/if}}
+
+
+        {{#unless isNew}}
+            <label class="control-label">Select File</label>
+          {{input type="file" id="file"}}
+        {{/unless}}
+
+
+        {{#unless isNew}}
+          <div>
+              <img src="{{model.baseUrl}}" alt="">
+          </div>
+        {{/unless}}
+
+        <button id="send-product" class="btn btn-primary" type="submit">
+            Send
+        </button>
+    </form>
+{{/modal-dialog}}

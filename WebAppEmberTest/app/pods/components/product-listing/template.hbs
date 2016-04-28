@@ -1,0 +1,20 @@
+<div class="col-sm-6 col-sm-4">
+  <div class="thumbnail">
+    {{#unless product.pathExists}}
+        <a {{action "showModal" product}} style="cursor: pointer"><img src="{{product.baseUrl}}" alt=""></a>
+    {{/unless}}
+
+    <div class="caption">
+        <h4 class="group inner list-group-item-heading">
+            <a {{action "showModal" product}} class="title" style="cursor: pointer">{{product.title}}</a>
+        </h4>
+        <p class="group inner list-group-item-text">
+          {{product.description}}
+        </p>
+    </div>
+    <button class="btn bg-danger btn-xs"
+      {{action "openModalConfirm"}}>
+        Delete
+    </button>
+  </div>
+</div>

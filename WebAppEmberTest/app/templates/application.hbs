@@ -1,0 +1,21 @@
+<div class="container">
+    <div>
+        <div class="page-header">
+            <h1>{{link-to "Test app" "index"}}</h1>
+        </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>{{link-to "Home" "index"}}</li>
+                    <li>{{link-to "Products" "products"}}</li>
+                    <li>{{link-to "About" "about"}}</li>
+                    <li>{{link-to "Contact me" "contact"}}</li>
+                </ul>
+            </div>
+        </nav>
+      {{outlet}}
+      {{outlet 'modal'}}
+
+    </div>
+  {{ember-notify}}
+</div>

@@ -1,0 +1,45 @@
+<h2>Products</h2>
+<hr>
+{{#if canCreateProduct}}
+    <div>
+        <div class="button-action">
+          <button id="create-button" class="btn btn-default"
+            {{action "showModal"}}>
+              Create product
+          </button>
+          <button {{action "sortProduct" "titleAsc"}}
+                  type="button" class="btn btn-default sort-title-asc sorting-button">
+              Title
+              <span class="glyphicon glyphicon-arrow-up"></span>
+          </button>
+          <button {{action "sortProduct" "titleDesc"}}
+                  type="button" class="btn btn-default sort-title-desc sorting-button">
+              Title
+              <span class="glyphicon glyphicon-arrow-down"></span>
+          </button>
+          <div class="clearfix"></div>
+        </div>
+        <div class="form-group search-panel">
+          {{input type="text" placeholder="Search"
+              value=searchTerm id="search-term" class="form-control search-field"}}
+            <div class="clearfix"></div>
+        </div>
+        <div class="container">
+            <div id="products" class="row list-group">
+              {{#each sortedProducts as |productUnit|}}
+                {{product-listing product=productUnit
+                action="openModal"
+                }}
+              {{/each}}
+            </div>
+        </div>
+    </div>
+{{/if}}
+{{#unless canCreateProduct}}
+    <div>
+        <div class="empty-message">
+            There are no product yet. Why don't you
+            <a href="#" {{action "showModal"}}>create one?</a>
+        </div>
+    </div>
+{{/unless}}
